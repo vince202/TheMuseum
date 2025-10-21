@@ -1,0 +1,435 @@
+/**
+ * LUXURY GRADIENTS & SOPHISTICATED EFFECTS
+ * Ultra high-end CSS-only visuals for The Tarot Museum
+ * No images required - pure CSS artistry
+ */
+
+/* ============================================
+   SOPHISTICATED RADIAL GRADIENTS
+   ============================================ */
+
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
+.bg-gradient-conic {
+  background: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
+}
+
+/* Vault Lighting Effect - Deep center spotlight */
+.vault-lighting {
+  background: radial-gradient(
+    ellipse 100% 80% at 50% 20%,
+    rgba(42, 37, 32, 0.4) 0%,
+    rgba(26, 26, 26, 0.8) 40%,
+    rgba(10, 10, 10, 1) 70%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
+/* Candlelight Glow - Warm golden ambient */
+.candlelight-glow {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(211, 183, 124, 0.08) 0%,
+    rgba(211, 183, 124, 0.03) 30%,
+    transparent 60%
+  );
+  animation: subtle-pulse 4s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* ============================================
+   LUXURY CARD BACKGROUNDS (Placeholders)
+   ============================================ */
+
+.tarot-card-placeholder {
+  position: relative;
+  aspect-ratio: 3/5;
+  background: linear-gradient(
+    135deg,
+    #1a1410 0%,
+    #2a2520 50%,
+    #1a1410 100%
+  );
+  border: 1px solid rgba(211, 183, 124, 0.3);
+  border-radius: 4px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(211, 183, 124, 0.1),
+    inset 0 1px 0 rgba(211, 183, 124, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.tarot-card-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(211, 183, 124, 0.15);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.tarot-card-placeholder::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgba(211, 183, 124, 0.2);
+  font-family: serif;
+}
+
+/* Individual card styles (can be replaced with real images) */
+.card-fool {
+  background: linear-gradient(
+    135deg,
+    #2a3540 0%,
+    #1a1f28 50%,
+    #2a3540 100%
+  );
+}
+
+.card-magician {
+  background: linear-gradient(
+    135deg,
+    #402a1a 0%,
+    #2a1f12 50%,
+    #402a1a 100%
+  );
+}
+
+.card-death {
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #0a0a0a 50%,
+    #1a1a1a 100%
+  );
+}
+
+.card-world {
+  background: linear-gradient(
+    135deg,
+    #1a2a1a 0%,
+    #12201a 50%,
+    #1a2a1a 100%
+  );
+}
+
+/* ============================================
+   SOPHISTICATED HOVER EFFECTS
+   ============================================ */
+
+.luxury-hover {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-hover::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(211, 183, 124, 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.luxury-hover:hover::before {
+  opacity: 1;
+}
+
+.luxury-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.8),
+    0 0 60px rgba(211, 183, 124, 0.2);
+}
+
+/* ============================================
+   ORNAMENTAL BORDERS (Art Nouveau Style)
+   ============================================ */
+
+.ornate-border {
+  position: relative;
+  padding: 2rem;
+}
+
+/* Corner decorations using CSS only */
+.ornate-border::before,
+.ornate-border::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: rgba(211, 183, 124, 0.4);
+  border-style: solid;
+}
+
+.ornate-border::before {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 8px;
+}
+
+.ornate-border::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 8px;
+}
+
+/* Additional corners via pseudo-elements on children */
+.ornate-border > *:first-child::before,
+.ornate-border > *:first-child::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: rgba(211, 183, 124, 0.4);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.ornate-border > *:first-child::before {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+  border-top-right-radius: 8px;
+}
+
+.ornate-border > *:first-child::after {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 8px;
+}
+
+/* ============================================
+   GILDED TEXT EFFECTS
+   ============================================ */
+
+.text-gilded {
+  background: linear-gradient(
+    135deg,
+    #D3B77C 0%,
+    #F4E4C1 25%,
+    #D3B77C 50%,
+    #C8A960 75%,
+    #D3B77C 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Drop shadow for depth */
+.text-gilded-shadow {
+  filter: drop-shadow(0 2px 8px rgba(211, 183, 124, 0.4));
+}
+
+/* ============================================
+   ARCHWAY / PORTAL EFFECTS
+   ============================================ */
+
+.archway-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 26, 0.6) 0%,
+    rgba(42, 37, 32, 0.4) 50%,
+    rgba(26, 26, 26, 0.6) 100%
+  );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(211, 183, 124, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.archway-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(248, 237, 210, 0.1) 50%,
+    transparent 100%
+  );
+  transition: left 0.6s ease;
+}
+
+.archway-gradient:hover::before {
+  left: 100%;
+}
+
+/* Radial glow at center on hover */
+.archway-gradient::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(211, 183, 124, 0.15) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+}
+
+.archway-gradient:hover::after {
+  width: 300%;
+  height: 300%;
+}
+
+/* ============================================
+   DEPTH & LAYERING
+   ============================================ */
+
+.depth-layer-1 {
+  transform: translateZ(0);
+  z-index: 10;
+}
+
+.depth-layer-2 {
+  transform: translateZ(20px);
+  z-index: 20;
+}
+
+.depth-layer-3 {
+  transform: translateZ(40px);
+  z-index: 30;
+}
+
+/* Parallax containers */
+.parallax-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* ============================================
+   LUXURY DIVIDERS
+   ============================================ */
+
+.luxury-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.luxury-divider::before,
+.luxury-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(211, 183, 124, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.luxury-divider-ornament {
+  color: rgba(211, 183, 124, 0.5);
+  font-size: 1.5rem;
+  font-family: serif;
+}
+
+/* ============================================
+   AMBIENT ANIMATIONS
+   ============================================ */
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(211, 183, 124, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(211, 183, 124, 0.2);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animations */
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Stagger delays for sequential reveals */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float-gentle,
+  .animate-glow-pulse,
+  .candlelight-glow {
+    animation: none;
+  }
+}

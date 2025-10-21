@@ -1,0 +1,199 @@
+/**
+ * HORLOGE ONIRIQUE MÉTAMORPHIQUE
+ * Une horloge mystérieuse qui se transforme organiquement
+ */
+
+:root {
+  --dream-clock-gold: #D3B77C;
+  --dream-clock-dark: #0a0806;
+  --dream-clock-darker: #000000;
+  --dream-glow-color: rgba(211, 183, 124, 0.3);
+  --dream-glow-spread: 15px;
+}
+
+.dream-clock {
+  width: var(--clock-size, 240px);
+  height: var(--clock-size, 240px);
+  position: relative;
+  animation: dream-color-shift 90s ease-in-out infinite alternate;
+}
+
+.dream-clock-inner {
+  width: 100%;
+  height: 100%;
+  animation:
+    dream-frame-shape-morph 60s ease-in-out infinite alternate,
+    dream-slow-drift 120s linear infinite alternate,
+    dream-breathing-scale 25s ease-in-out infinite alternate;
+}
+
+.dream-clock-frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-style: solid;
+  border-color: var(--dream-clock-gold);
+  box-shadow:
+    0 0 var(--dream-glow-spread) var(--dream-glow-color),
+    inset 0 0 10px rgba(0, 0, 0, 0.5);
+  background: radial-gradient(ellipse at center, #1a1610 0%, #0a0806 70%);
+  transition: all 2s ease-in-out;
+  animation:
+    dream-frame-morph 45s ease-in-out infinite alternate,
+    dream-glow-pulse 8s ease-in-out infinite alternate;
+}
+
+.dream-clock .dream-clock-hand {
+  --angle: 0deg;
+  --scaleY: 1;
+  --shift: 0px;
+  background: var(--dream-clock-gold);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-origin: 0% 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(var(--angle)) scaleY(var(--scaleY)) translateX(var(--shift));
+  box-shadow: 0 0 5px rgba(211, 183, 124, 0.5);
+  transition: opacity 0.4s ease-in-out, filter 2s ease;
+  animation: dream-hand-morph 40s ease-in-out infinite alternate;
+}
+
+.dream-clock .hour-hand {
+  height: 4px;
+  width: 25%;
+}
+
+.dream-clock .minute-hand {
+  height: 2px;
+  width: 40%;
+  animation-delay: -2s;
+}
+
+.dream-clock .second-hand {
+  height: 1px;
+  width: 45%;
+  background: #e6c88b;
+  animation-delay: -5s;
+}
+
+.dream-clock-center {
+  width: 10px;
+  height: 10px;
+  background: var(--dream-clock-gold);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 2s ease-in-out;
+  box-shadow: 0 0 8px var(--dream-glow-color);
+  animation: dream-pulsating-center 6s ease-in-out infinite alternate;
+}
+
+/* ========== KEYFRAMES ========== */
+
+@keyframes dream-frame-shape-morph {
+  0%, 100% {
+    clip-path: polygon(
+      50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%,
+      25% 30%, 50% 20%, 75% 30%, 80% 20%, 20% 20%
+    );
+  }
+  25% {
+    clip-path: polygon(
+      50% 0%, 83% 12%, 100% 50%, 83% 88%, 50% 100%,
+      17% 88%, 0% 50%, 17% 12%, 30% 5%, 70% 5%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%,
+      0% 25%, 25% 25%, 50% 50%, 75% 25%, 50% 25%
+    );
+  }
+  75% {
+    clip-path: polygon(
+      50% 0%, 65% 35%, 100% 38%, 75% 60%, 85% 100%,
+      50% 75%, 15% 100%, 25% 60%, 0% 38%, 35% 35%
+    );
+  }
+}
+
+@keyframes dream-breathing-scale {
+  from { transform: scale(1); }
+  to { transform: scale(1.03); }
+}
+
+@keyframes dream-frame-morph {
+  0%, 100% { border-width: 4px; }
+  50% { border-width: 20px; }
+  75% { border-width: 8px; }
+}
+
+@keyframes dream-hand-morph {
+  0%, 100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  25% {
+    --scaleY: 3;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.35;
+    --scaleY: 0.8;
+    --shift: 12px;
+    filter: blur(0.5px);
+  }
+}
+
+@keyframes dream-slow-drift {
+  from { transform: rotate(0deg) translateX(0px); }
+  to { transform: rotate(15deg) translateX(20px); }
+}
+
+@keyframes dream-color-shift {
+  0%, 100% { --dream-clock-gold: #D3B77C; }
+  33% { --dream-clock-gold: #B87333; }
+  66% { --dream-clock-gold: #C0C0C0; }
+}
+
+@keyframes dream-glow-pulse {
+  0%, 100% {
+    --dream-glow-color: rgba(211, 183, 124, 0.3);
+    --dream-glow-spread: 15px;
+  }
+  50% {
+    --dream-glow-color: rgba(184, 115, 51, 0.7);
+    --dream-glow-spread: 25px;
+  }
+}
+
+@keyframes dream-pulsating-center {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to { transform: translate(-50%, -50%) scale(1.5); }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dream-clock-inner,
+  .dream-clock-frame,
+  .dream-clock-hand,
+  .dream-clock-center {
+    animation: none !important;
+  }
+
+  .dream-clock-frame {
+    border-width: 4px;
+  }
+
+  .dream-clock-hand {
+    opacity: 1;
+    filter: none;
+  }
+}

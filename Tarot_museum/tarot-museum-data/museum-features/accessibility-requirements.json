@@ -1,0 +1,264 @@
+{
+  "accessibilityRequirements": {
+    "wcagCompliance": {
+      "overview": {
+        "standard": "Web Content Accessibility Guidelines (WCAG) 2.1",
+        "minimumLevel": "AA conformance",
+        "optimalLevel": "AAA conformance (best practice)",
+        "organization": "World Wide Web Consortium (W3C)",
+        "scope": "All digital museum content and interactive features"
+      },
+      "fourPrinciples": {
+        "perceivable": {
+          "description": "Information and UI components must be presentable to users in ways they can perceive",
+          "requirements": [
+            "Text alternatives for non-text content",
+            "Captions and alternatives for multimedia",
+            "Content can be presented without losing meaning",
+            "Make it easier for users to see and hear content"
+          ]
+        },
+        "operable": {
+          "description": "Interface components and navigation must be operable",
+          "requirements": [
+            "All functionality available via keyboard",
+            "Users have enough time to read content",
+            "Content doesn't cause seizures or physical reactions",
+            "Users can navigate and find content"
+          ]
+        },
+        "understandable": {
+          "description": "Information and operation of UI must be understandable",
+          "requirements": [
+            "Text is readable and understandable",
+            "Content appears and operates predictably",
+            "Users are helped to avoid and correct mistakes"
+          ]
+        },
+        "robust": {
+          "description": "Content must be robust enough for various assistive technologies",
+          "requirements": [
+            "Content can be interpreted reliably by wide variety of user agents",
+            "Compatible with current and future assistive tools"
+          ]
+        }
+      }
+    },
+    "visualAccessibility": {
+      "colorContrast": {
+        "requirements": {
+          "smallText": "Contrast ratio of 4.5:1 minimum",
+          "largeText": "Contrast ratio of 3:1 minimum",
+          "aaa": "7:1 for small text, 4.5:1 for large text (optimal)"
+        },
+        "implementation": [
+          "No information conveyed by color alone",
+          "Alternative indicators for color-based information",
+          "High contrast mode support",
+          "User-adjustable color schemes"
+        ]
+      },
+      "visualImpairment": {
+        "screenReaderSupport": {
+          "requirements": [
+            "Proper heading structure (H1-H6)",
+            "Alternative text for all meaningful images",
+            "Descriptive link text",
+            "Form labels properly associated",
+            "Skip navigation links",
+            "Logical reading order"
+          ],
+          "compatibility": ["JAWS", "NVDA", "VoiceOver", "ORCA"],
+          "testing": "Regular testing with actual screen reader software"
+        },
+        "lowVision": {
+          "features": [
+            "Zoom functionality up to 200% without horizontal scrolling",
+            "Resizable text without assistive technology",
+            "High contrast mode",
+            "Customizable font sizes",
+            "Magnification tool compatibility"
+          ]
+        },
+        "blindness": {
+          "requirements": [
+            "Complete keyboard navigation",
+            "Audio descriptions for visual content",
+            "Tactile feedback where applicable",
+            "Screen reader optimized content structure",
+            "Alternative text for decorative elements marked appropriately"
+          ]
+        }
+      }
+    },
+    "motorAccessibility": {
+      "keyboardNavigation": {
+        "requirements": [
+          "All interactive elements accessible via keyboard",
+          "Visible focus indicators",
+          "Logical tab order",
+          "Keyboard shortcuts for common actions",
+          "No keyboard traps",
+          "Reasonable time limits or ability to extend"
+        ],
+        "implementation": [
+          "Tab, Shift+Tab for navigation",
+          "Enter/Space for activation",
+          "Arrow keys for component navigation",
+          "Escape key for closing dialogs"
+        ]
+      },
+      "motorImpairment": {
+        "features": [
+          "Large click targets (minimum 44x44 pixels)",
+          "Generous spacing between interactive elements",
+          "Drag and drop alternatives",
+          "Adjustable time limits",
+          "Error prevention and correction",
+          "Undo functionality"
+        ]
+      }
+    },
+    "auditoryAccessibility": {
+      "hearingImpairment": {
+        "requirements": [
+          "Captions for all video content",
+          "Transcripts for audio content",
+          "Visual indicators for audio alerts",
+          "Sign language interpretation where applicable",
+          "Audio content alternatives"
+        ]
+      },
+      "deafness": {
+        "features": [
+          "Complete visual information delivery",
+          "Text alternatives for audio cues",
+          "Visual notification systems",
+          "Sign language support",
+          "Lip-reading friendly video content"
+        ]
+      }
+    },
+    "cognitiveAccessibility": {
+      "requirements": [
+        "Simple, clear language",
+        "Consistent navigation patterns",
+        "Error identification and suggestions",
+        "Help and documentation",
+        "Progress indicators for multi-step processes",
+        "Distraction-free content options"
+      ],
+      "implementation": [
+        "Reading level appropriate for audience",
+        "Glossary for specialized terms",
+        "Clear instructions and feedback",
+        "Predictable interface behavior",
+        "Memory aids and reminders"
+      ]
+    },
+    "technicalImplementation": {
+      "htmlSemantics": {
+        "requirements": [
+          "Proper heading hierarchy",
+          "Semantic HTML elements (nav, main, aside, section)",
+          "ARIA labels and descriptions",
+          "Role attributes for complex widgets",
+          "Live regions for dynamic content",
+          "Form validation and error handling"
+        ]
+      },
+      "responsive": {
+        "requirements": [
+          "Mobile-first design approach",
+          "Flexible layouts for different screen sizes",
+          "Touch-friendly interface elements",
+          "Orientation independence",
+          "Zoom compatibility up to 400%"
+        ]
+      },
+      "performance": {
+        "requirements": [
+          "Fast loading times for assistive technology",
+          "Efficient data usage for mobile users",
+          "Progressive enhancement",
+          "Graceful degradation",
+          "Offline functionality where possible"
+        ]
+      }
+    },
+    "contentSpecific": {
+      "tarotCards": {
+        "requirements": [
+          "Detailed alternative text describing card imagery",
+          "Symbolic interpretation available in text format",
+          "High-resolution images for zoom functionality",
+          "Audio descriptions for complex symbolism",
+          "Keyboard navigation for card browsing"
+        ]
+      },
+      "virtualTours": {
+        "requirements": [
+          "Audio navigation cues",
+          "Text descriptions of spatial layouts",
+          "Keyboard controls for tour navigation",
+          "Alternative viewing modes",
+          "Progress indicators and orientation help"
+        ]
+      },
+      "interactiveFeatures": {
+        "requirements": [
+          "Alternative input methods",
+          "Clear instructions and feedback",
+          "Error prevention and recovery",
+          "Timeout warnings and extensions",
+          "Simplified interaction modes"
+        ]
+      }
+    },
+    "testing": {
+      "automatedTesting": {
+        "tools": [
+          "axe DevTools",
+          "WAVE Web Accessibility Evaluator",
+          "Lighthouse accessibility audit",
+          "Pa11y command line tool"
+        ]
+      },
+      "manualTesting": {
+        "methods": [
+          "Keyboard-only navigation testing",
+          "Screen reader testing with actual users",
+          "Color contrast verification",
+          "Zoom and magnification testing",
+          "User testing with disabled participants"
+        ]
+      },
+      "ongoingCompliance": {
+        "requirements": [
+          "Regular accessibility audits",
+          "User feedback collection",
+          "Staff training on accessibility",
+          "Updated testing as content changes",
+          "Accessibility statement maintenance"
+        ]
+      }
+    },
+    "legalCompliance": {
+      "standards": [
+        "Americans with Disabilities Act (ADA) - USA",
+        "Section 508 - US Federal agencies",
+        "EN 301 549 - European standard",
+        "Accessibility for Ontarians with Disabilities Act (AODA) - Canada"
+      ],
+      "culturalHeritage": {
+        "specificRequirements": [
+          "Equal access to cultural content",
+          "Inclusive educational experiences",
+          "Multi-sensory content delivery",
+          "Cultural sensitivity in accessibility features",
+          "Universal design principles"
+        ]
+      }
+    }
+  }
+}

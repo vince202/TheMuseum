@@ -1,0 +1,205 @@
+/* Glow Effects for Interactive Elements */
+
+/* Ambient glow classes */
+.glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+               0 0 20px rgba(0, 255, 255, 0.3),
+               0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.glow-purple {
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5),
+               0 0 20px rgba(138, 43, 226, 0.3),
+               0 0 30px rgba(138, 43, 226, 0.1);
+}
+
+.glow-mystical {
+  text-shadow: 0 0 10px rgba(75, 0, 130, 0.6),
+               0 0 20px rgba(138, 43, 226, 0.4),
+               0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* Box glow effects */
+.box-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+              0 0 40px rgba(0, 255, 255, 0.2),
+              inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.box-glow-purple {
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+              0 0 40px rgba(138, 43, 226, 0.2),
+              inset 0 0 20px rgba(138, 43, 226, 0.1);
+}
+
+/* Hover glow effects */
+.hover-glow-cyan {
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hover-glow-cyan:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5),
+              0 0 60px rgba(0, 255, 255, 0.3),
+              inset 0 0 30px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.hover-glow-purple {
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hover-glow-purple:hover {
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.5),
+              0 0 60px rgba(138, 43, 226, 0.3),
+              inset 0 0 30px rgba(138, 43, 226, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Pulsing glow animation */
+@keyframes pulse-glow-cyan {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+                0 0 40px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5),
+                0 0 60px rgba(0, 255, 255, 0.3);
+  }
+}
+
+@keyframes pulse-glow-purple {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3),
+                0 0 40px rgba(138, 43, 226, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.5),
+                0 0 60px rgba(138, 43, 226, 0.3);
+  }
+}
+
+.pulse-glow-cyan {
+  animation: pulse-glow-cyan 3s ease-in-out infinite;
+}
+
+.pulse-glow-purple {
+  animation: pulse-glow-purple 3s ease-in-out infinite;
+}
+
+/* Card glow on hover */
+.card-mystical {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-mystical::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.card-mystical:hover::before {
+  opacity: 1;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Ambient light particles */
+.ambient-light {
+  position: fixed;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.3;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(138, 43, 226, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 50%,
+    rgba(0, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: ambient-shift 10s ease-in-out infinite;
+}
+
+@keyframes ambient-shift {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+/* Border glow animation */
+.border-glow {
+  position: relative;
+}
+
+.border-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 255, 0.5),
+    rgba(138, 43, 226, 0.5),
+    rgba(0, 255, 255, 0.5)
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.border-glow:hover::after {
+  opacity: 1;
+  animation: border-pulse 2s linear infinite;
+}
+
+@keyframes border-pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}

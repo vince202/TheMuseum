@@ -1,0 +1,211 @@
+{
+  "majorArcana": {
+    "overview": {
+      "totalCards": 22,
+      "numbering": "0-21 (or 1-21 with Fool unnumbered)",
+      "significance": "Life lessons, karmic influences, archetypal themes",
+      "journey": "The Fool's Journey - spiritual evolution to enlightenment",
+      "scope": "Major life events, spiritual lessons, cosmic turning points"
+    },
+    "cards": {
+      "0": {
+        "name": "The Fool",
+        "keyWords": {
+          "upright": ["innocence", "new beginnings", "free spirit", "potential"],
+          "reversed": ["recklessness", "taken advantage of", "inconsideration"]
+        },
+        "meaning": "You already have the tools. Use them. The Fool is all about potential made real. New beginnings and stepping into the unknown with faith.",
+        "symbolism": "Represents the beginning of all journeys, pure potential, and fearless exploration of life's possibilities."
+      },
+      "1": {
+        "name": "The Magician",
+        "keyWords": {
+          "upright": ["manifestation", "willpower", "desire", "creation"],
+          "reversed": ["manipulation", "poor planning", "untapped talents"]
+        },
+        "meaning": "You already have the tools. Use them. The Magician is all about potential made real. Stop manifesting in theory and start creating in the real world.",
+        "symbolism": "The bridge between spiritual and material realms, focused will, and the power to manifest desires into reality."
+      },
+      "2": {
+        "name": "The High Priestess",
+        "keyWords": {
+          "upright": ["intuition", "sacred knowledge", "divine feminine", "subconscious"],
+          "reversed": ["secrets", "disconnected from intuition", "withdrawal"]
+        },
+        "meaning": "Your intuition is not being subtle. Listen to wisdom beneath the noise. Trust your gut, especially when it doesn't make logical sense.",
+        "symbolism": "Inner wisdom, mystical knowledge, the unconscious mind, and connection to divine feminine energy."
+      },
+      "3": {
+        "name": "The Empress",
+        "keyWords": {
+          "upright": ["femininity", "beauty", "nature", "nurturing"],
+          "reversed": ["creative block", "dependence on others", "smothering"]
+        },
+        "meaning": "Sensuality. Creativity. Embodiment. The Empress doesn't chase -- she attracts. Nature's goddess energy reminding you that growth takes time and softness is strength.",
+        "symbolism": "Fertility, abundance, motherhood, creative force, and connection to natural cycles."
+      },
+      "4": {
+        "name": "The Emperor",
+        "keyWords": {
+          "upright": ["authority", "structure", "control", "fatherhood"],
+          "reversed": ["tyranny", "rigidity", "coldness", "domination"]
+        },
+        "meaning": "Where the Empress nurtures, The Emperor protects. Structure, boundaries, and inner authority that says 'I've got this.'",
+        "symbolism": "Masculine authority, structured power, leadership, and the establishment of order and control."
+      },
+      "5": {
+        "name": "The Hierophant",
+        "keyWords": {
+          "upright": ["spiritual wisdom", "religious beliefs", "conformity", "tradition"],
+          "reversed": ["personal beliefs", "freedom", "challenging the status quo"]
+        },
+        "meaning": "Tradition isn't always a trap. Spiritual mentorship and ancestral knowledge. Sometimes the 'old ways' have medicine -- ritual, discipline, belief.",
+        "symbolism": "Spiritual authority, traditional learning, religious doctrine, and connection to established wisdom."
+      },
+      "6": {
+        "name": "The Lovers",
+        "keyWords": {
+          "upright": ["partnerships", "duality", "union", "choices"],
+          "reversed": ["loss of balance", "one-sidedness", "disharmony"]
+        },
+        "meaning": "Relationships, choices, and the need to align actions with values. Union of opposites and important decisions about partnerships.",
+        "symbolism": "Love, choice, harmony, relationship dynamics, and the integration of dualistic forces."
+      },
+      "7": {
+        "name": "The Chariot",
+        "keyWords": {
+          "upright": ["direction", "control", "willpower", "victory"],
+          "reversed": ["lack of control", "lack of direction", "aggression"]
+        },
+        "meaning": "Determination, willpower, and triumph through focus. Moving forward with confidence and overcoming obstacles through self-discipline.",
+        "symbolism": "Victory through will, controlled progress, mastery over opposing forces, and directed energy."
+      },
+      "8": {
+        "name": "Strength",
+        "keyWords": {
+          "upright": ["inner strength", "bravery", "compassion", "focus"],
+          "reversed": ["self doubt", "weakness", "insecurity"]
+        },
+        "meaning": "True strength comes from within. Compassionate courage and the power of gentle persistence over brute force.",
+        "symbolism": "Inner courage, gentle power, compassion triumphing over aggression, and mastery through love."
+      },
+      "9": {
+        "name": "The Hermit",
+        "keyWords": {
+          "upright": ["contemplation", "search for truth", "inner guidance"],
+          "reversed": ["loneliness", "isolation", "lost your way"]
+        },
+        "meaning": "Soul searching and seeking inner truth. The wisdom that comes from solitude and self-reflection.",
+        "symbolism": "Inner wisdom, spiritual seeking, guidance from within, and the illumination that comes from introspection."
+      },
+      "10": {
+        "name": "Wheel of Fortune",
+        "keyWords": {
+          "upright": ["change", "cycles", "inevitable fate", "luck"],
+          "reversed": ["no control", "clinging to control", "bad luck"]
+        },
+        "meaning": "Life's natural cycles and the turning tides of fortune. What goes up must come down, and vice versa.",
+        "symbolism": "Destiny, cycles of life, karma, and the constant motion of change and fortune."
+      },
+      "11": {
+        "name": "Justice",
+        "keyWords": {
+          "upright": ["cause and effect", "clarity", "truth", "law"],
+          "reversed": ["dishonesty", "unaccountability", "unfairness"]
+        },
+        "meaning": "Truth, fairness, and the law of cause and effect. Actions have consequences and balance must be restored.",
+        "symbolism": "Divine justice, truth, fairness, law, and the balancing of karmic scales."
+      },
+      "12": {
+        "name": "The Hanged Man",
+        "keyWords": {
+          "upright": ["sacrifice", "release", "martyrdom", "perspective"],
+          "reversed": ["stalling", "needless sacrifice", "fear of sacrifice"]
+        },
+        "meaning": "Willing sacrifice for wisdom. Sometimes you need to surrender and see things from a different perspective.",
+        "symbolism": "Sacrifice, surrender, new perspective, spiritual growth through letting go."
+      },
+      "13": {
+        "name": "Death",
+        "keyWords": {
+          "upright": ["transformation", "endings", "change", "rebirth"],
+          "reversed": ["resistance to change", "personal transformation", "inner purging"]
+        },
+        "meaning": "Endings are just beginnings in disguise. Not literal death, but transformation. What's dying is making space for what's next.",
+        "symbolism": "Transformation, endings leading to new beginnings, spiritual rebirth, and release of the old."
+      },
+      "14": {
+        "name": "Temperance",
+        "keyWords": {
+          "upright": ["balance", "moderation", "patience", "purpose"],
+          "reversed": ["imbalance", "excess", "self-healing", "re-alignment"]
+        },
+        "meaning": "Blend, don't bulldoze. The art of balance and moderation. You don't have to rush or control the outcome.",
+        "symbolism": "Balance, harmony, healing, patience, and the alchemical mixing of opposing elements."
+      },
+      "15": {
+        "name": "The Devil",
+        "keyWords": {
+          "upright": ["bondage", "addiction", "sexuality", "materialism"],
+          "reversed": ["releasing limiting beliefs", "exploring dark thoughts", "detachment"]
+        },
+        "meaning": "That thing you think is holding you back? It probably isn't. Exposes illusions: addiction, fear, shame. You trap yourself, but now you see the chains.",
+        "symbolism": "Bondage, temptation, materialism, addiction, and the illusion of being trapped by external forces."
+      },
+      "16": {
+        "name": "The Tower",
+        "keyWords": {
+          "upright": ["sudden upheaval", "broken pride", "disaster", "revelation"],
+          "reversed": ["disaster avoided", "delayed disaster", "fear of suffering"]
+        },
+        "meaning": "Sudden revelation and necessary destruction of false structures. Lightning-bolt moments that clear away illusions.",
+        "symbolism": "Sudden change, revelation, destruction of false beliefs, awakening, and liberation from illusion."
+      },
+      "17": {
+        "name": "The Star",
+        "keyWords": {
+          "upright": ["hope", "faith", "rejuvenation", "spirituality"],
+          "reversed": ["faithlessness", "discouragement", "insecurity"]
+        },
+        "meaning": "Hope, healing, and renewed faith after the storm. The light that guides you through dark times.",
+        "symbolism": "Hope, inspiration, spiritual guidance, healing, and connection to higher purpose."
+      },
+      "18": {
+        "name": "The Moon",
+        "keyWords": {
+          "upright": ["unconscious", "illusions", "intuition", "dreams"],
+          "reversed": ["confusion", "fear", "misinterpretation"]
+        },
+        "meaning": "Trust your intuition through uncertainty. The Moon illuminates the path through illusion and subconscious fears.",
+        "symbolism": "Illusion, intuition, dreams, the unconscious mind, and navigation through uncertainty."
+      },
+      "19": {
+        "name": "The Sun",
+        "keyWords": {
+          "upright": ["joy", "success", "celebration", "positivity"],
+          "reversed": ["negativity", "depression", "sadness"]
+        },
+        "meaning": "Pure joy, success, and vitality. The Sun brings clarity, energy, and reason to celebrate life's goodness.",
+        "symbolism": "Success, vitality, joy, enlightenment, and the illumination of truth and happiness."
+      },
+      "20": {
+        "name": "Judgement",
+        "keyWords": {
+          "upright": ["reflection", "reckoning", "awakening", "rebirth"],
+          "reversed": ["lack of self awareness", "doubt", "self loathing"]
+        },
+        "meaning": "Spiritual awakening and answering a higher calling. Time for reflection, forgiveness, and rising to a new level of consciousness.",
+        "symbolism": "Rebirth, awakening, judgment, calling, and spiritual transformation toward higher consciousness."
+      },
+      "21": {
+        "name": "The World",
+        "keyWords": {
+          "upright": ["completion", "accomplishment", "travel", "fulfillment"],
+          "reversed": ["incomplete goals", "lack of closure", "stagnation"]
+        },
+        "meaning": "Fulfillment, wholeness, and successful completion of a major journey. The final card representing integration and readiness for what's next.",
+        "symbolism": "Completion, fulfillment, cosmic consciousness, wholeness, and the achievement of goals."
+      }
+    }
+  }
+}

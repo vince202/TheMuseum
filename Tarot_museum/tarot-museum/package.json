@@ -1,0 +1,107 @@
+{
+  "name": "tarot-museum",
+  "version": "1.0.0",
+  "description": "Interactive Web Tarot Museum - A comprehensive digital collection exploring tarot history, symbolism, and divination",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:analyze": "npm run build && node scripts/performance-check.js",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:a11y": "axe --load-delay 2000 --exit",
+    "test:perf": "npm run build && node scripts/performance-check.js",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --ext ts,tsx --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src/**/*.{ts,tsx,css}",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@react-spring/three": "^10.0.3",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^10.0.1",
+    "lucide-react": "^0.323.0",
+    "maath": "^0.10.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.6.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.4.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/three": "^0.150.1",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.35.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.3",
+    "jest": "^29.4.3",
+    "jest-environment-jsdom": "^29.4.3",
+    "lint-staged": "^13.1.2",
+    "playwright": "^1.31.2",
+    "postcss": "^8.5.6",
+    "prettier": "^2.8.4",
+    "rollup-plugin-visualizer": "^6.0.4",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "keywords": [
+    "tarot",
+    "museum",
+    "divination",
+    "symbolism",
+    "interactive",
+    "education",
+    "history",
+    "cultural-heritage",
+    "accessibility",
+    "react",
+    "typescript"
+  ],
+  "author": "Hive Mind Collective",
+  "license": "MIT",
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/test/setup.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/test/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 80,
+        "functions": 80,
+        "lines": 80,
+        "branches": 80
+      }
+    }
+  }
+}

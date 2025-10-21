@@ -1,0 +1,202 @@
+/**
+ * 3D Card Interaction Styles
+ * Additional CSS for hardware-accelerated 3D transforms
+ */
+
+/* Ensure backface visibility for card flips */
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* 3D perspective context */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Glassmorphic effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glow effect utility */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.5),
+              0 0 40px rgba(34, 211, 238, 0.3),
+              0 0 60px rgba(34, 211, 238, 0.1);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5),
+              0 0 40px rgba(168, 85, 247, 0.3),
+              0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5),
+              0 0 40px rgba(236, 72, 153, 0.3),
+              0 0 60px rgba(236, 72, 153, 0.1);
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  animation: ripple 0.6s ease-out;
+}
+
+/* 3D card tilt */
+.card-3d-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d-tilt:hover {
+  transform: perspective(1000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+}
+
+/* Magical particle container */
+.particle-container {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+.smooth-transform {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Edge glow */
+.edge-glow {
+  position: relative;
+}
+
+.edge-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, #06b6d4, #a855f7, #ec4899);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.edge-glow:hover::before {
+  opacity: 1;
+}
+
+/* Performance optimizations */
+.optimized-3d {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .float-animation,
+  .pulse-glow,
+  .ripple,
+  .shimmer {
+    animation: none;
+  }
+
+  .smooth-transform,
+  .card-3d-tilt {
+    transition: none;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .perspective-1000 {
+    perspective: 800px;
+  }
+
+  .card-3d-tilt:active {
+    transform: perspective(800px) scale(0.98);
+  }
+}

@@ -1,0 +1,629 @@
+/* ==========================================================================
+   TAROT MUSEUM - MAGICAL DESIGN SYSTEM
+   Dark Teal/Emerald Mystical Theme with Glassmorphism
+   ========================================================================== */
+
+:root {
+  /* ==========================================================================
+     COLOR PALETTE - Dark Magical Teal/Emerald
+     ========================================================================== */
+
+  /* Primary Teal Scale */
+  --primary-950: #051414;
+  --primary-900: #0a1f1f;
+  --primary-800: #0d2d2d;
+  --primary-700: #0f3d3d;
+  --primary-600: #14524f;
+  --primary-500: #1a6b66;
+  --primary-400: #2a8580;
+  --primary-300: #3da89f;
+  --primary-200: #5fc9bf;
+  --primary-100: #8ee4da;
+
+  /* Accent Colors - Mystical Palette */
+  --accent-cyan: #00d9ff;
+  --accent-cyan-dark: #00a8cc;
+  --accent-emerald: #10b981;
+  --accent-emerald-dark: #059669;
+  --accent-purple: #8b5cf6;
+  --accent-purple-dark: #7c3aed;
+  --accent-gold: #fbbf24;
+  --accent-rose: #fb7185;
+
+  /* Glow & Effect Colors */
+  --glow-teal: rgba(20, 82, 79, 0.6);
+  --glow-cyan: rgba(0, 217, 255, 0.4);
+  --glow-emerald: rgba(16, 185, 129, 0.4);
+  --glow-purple: rgba(139, 92, 246, 0.4);
+  --glow-gold: rgba(251, 191, 36, 0.3);
+
+  /* Neutral Scale */
+  --neutral-950: #0c0d0d;
+  --neutral-900: #18191a;
+  --neutral-800: #27292a;
+  --neutral-700: #3a3d3f;
+  --neutral-600: #52565a;
+  --neutral-500: #6b7075;
+  --neutral-400: #9398a0;
+  --neutral-300: #b8bcc3;
+  --neutral-200: #d6d9de;
+  --neutral-100: #ebeef2;
+  --neutral-50: #f8f9fb;
+
+  /* Semantic Colors */
+  --bg-primary: var(--primary-950);
+  --bg-secondary: var(--primary-900);
+  --bg-tertiary: var(--primary-800);
+  --bg-card: rgba(15, 61, 61, 0.4);
+  --bg-card-hover: rgba(20, 82, 79, 0.5);
+
+  --text-primary: #ebeef2;
+  --text-secondary: #b8bcc3;
+  --text-tertiary: #9398a0;
+  --text-accent: var(--accent-cyan);
+
+  --border-primary: rgba(20, 82, 79, 0.3);
+  --border-accent: rgba(0, 217, 255, 0.4);
+  --border-glow: rgba(0, 217, 255, 0.6);
+
+  /* ==========================================================================
+     TYPOGRAPHY
+     ========================================================================== */
+
+  /* Font Families */
+  --font-display: 'Cinzel', 'Playfair Display', serif;
+  --font-body: 'Quicksand', 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Monaco', monospace;
+
+  /* Font Sizes - Fluid Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.625rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3.375rem);
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ==========================================================================
+     SPACING SYSTEM
+     ========================================================================== */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ==========================================================================
+     SHADOWS - Layered Depth
+     ========================================================================== */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-base: 0 2px 8px -1px rgba(0, 0, 0, 0.4),
+                 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5),
+               0 2px 6px 0 rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 24px -3px rgba(0, 0, 0, 0.6),
+               0 4px 12px 0 rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.7),
+               0 8px 16px 0 rgba(0, 0, 0, 0.6);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+
+  /* Glow Shadows */
+  --shadow-glow-teal: 0 0 20px var(--glow-teal),
+                      0 0 40px var(--glow-teal);
+  --shadow-glow-cyan: 0 0 20px var(--glow-cyan),
+                      0 0 40px var(--glow-cyan),
+                      0 0 60px rgba(0, 217, 255, 0.2);
+  --shadow-glow-emerald: 0 0 20px var(--glow-emerald),
+                         0 0 40px var(--glow-emerald);
+  --shadow-glow-purple: 0 0 20px var(--glow-purple),
+                        0 0 40px var(--glow-purple);
+
+  /* Inner Shadows */
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --shadow-inner-lg: inset 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+
+  /* ==========================================================================
+     BORDER RADIUS
+     ========================================================================== */
+
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     TRANSITIONS & TIMING
+     ========================================================================== */
+
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+  --transition-slower: 700ms;
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ==========================================================================
+     GLASSMORPHISM PROPERTIES
+     ========================================================================== */
+
+  --glass-blur: 16px;
+  --glass-blur-heavy: 24px;
+  --glass-bg: rgba(15, 61, 61, 0.15);
+  --glass-bg-medium: rgba(20, 82, 79, 0.25);
+  --glass-bg-strong: rgba(20, 82, 79, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* ==========================================================================
+     Z-INDEX LAYERS
+     ========================================================================== */
+
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-notification: 700;
+  --z-maximum: 999;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - GLASSMORPHISM
+   ========================================================================== */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.glass-medium {
+  background: var(--glass-bg-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur-heavy));
+  -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base) var(--ease-out);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-teal);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - GLOW EFFECTS
+   ========================================================================== */
+
+.glow-teal {
+  box-shadow: var(--shadow-glow-teal);
+}
+
+.glow-cyan {
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.glow-emerald {
+  box-shadow: var(--shadow-glow-emerald);
+}
+
+.glow-purple {
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.glow-text-cyan {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 20px var(--glow-cyan),
+               0 0 30px var(--glow-cyan);
+}
+
+.glow-text-emerald {
+  color: var(--accent-emerald);
+  text-shadow: 0 0 20px var(--glow-emerald),
+               0 0 30px var(--glow-emerald);
+}
+
+.glow-border {
+  border: 2px solid var(--border-accent);
+  box-shadow: inset 0 0 20px var(--glow-cyan),
+              0 0 20px var(--glow-cyan);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - AURORA GRADIENTS
+   ========================================================================== */
+
+.aurora-bg {
+  background: linear-gradient(
+    135deg,
+    var(--primary-950) 0%,
+    var(--primary-900) 25%,
+    var(--primary-800) 50%,
+    var(--primary-900) 75%,
+    var(--primary-950) 100%
+  );
+  background-size: 400% 400%;
+  animation: aurora-shift 20s ease infinite;
+}
+
+.aurora-teal {
+  background: linear-gradient(
+    135deg,
+    #0a1f1f 0%,
+    #14524f 25%,
+    #1a6b66 50%,
+    #14524f 75%,
+    #0a1f1f 100%
+  );
+  background-size: 400% 400%;
+  animation: aurora-shift 15s ease infinite;
+}
+
+.aurora-mystical {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 31, 31, 0.9) 0%,
+    rgba(139, 92, 246, 0.3) 25%,
+    rgba(0, 217, 255, 0.3) 50%,
+    rgba(16, 185, 129, 0.3) 75%,
+    rgba(10, 31, 31, 0.9) 100%
+  );
+  background-size: 400% 400%;
+  animation: aurora-shift 25s ease infinite;
+}
+
+.gradient-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 217, 255, 0.15) 0%,
+    rgba(16, 185, 129, 0.1) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - SHADOWS & DEPTH
+   ========================================================================== */
+
+.shadow-deep {
+  box-shadow: var(--shadow-xl),
+              0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-layered {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4),
+              0 4px 8px rgba(0, 0, 0, 0.3),
+              0 12px 24px rgba(0, 0, 0, 0.2),
+              0 24px 48px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-lg),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - TYPOGRAPHY
+   ========================================================================== */
+
+.text-display {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+}
+
+.text-mystical {
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-emerald), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: var(--tracking-wide);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px currentColor,
+               0 0 20px currentColor,
+               0 0 30px currentColor;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - TRANSITIONS
+   ========================================================================== */
+
+.transition-smooth {
+  transition: all var(--transition-base) var(--ease-out);
+}
+
+.transition-spring {
+  transition: all var(--transition-base) var(--ease-spring);
+}
+
+.transition-glow {
+  transition: box-shadow var(--transition-base) var(--ease-out),
+              border-color var(--transition-base) var(--ease-out);
+}
+
+/* ==========================================================================
+   COMPONENT CLASSES - BUTTONS
+   ========================================================================== */
+
+.btn-primary {
+  padding: var(--space-3) var(--space-6);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+  color: var(--text-primary);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  box-shadow: var(--shadow-md), var(--shadow-glow-teal);
+  transition: all var(--transition-base) var(--ease-out);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+  transform: translateX(-100%);
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-400));
+  box-shadow: var(--shadow-lg), var(--shadow-glow-cyan);
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-base), var(--shadow-glow-teal);
+}
+
+.btn-ghost {
+  padding: var(--space-3) var(--space-6);
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  transition: all var(--transition-base) var(--ease-out);
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  background: var(--glass-bg);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* ==========================================================================
+   COMPONENT CLASSES - CARDS
+   ========================================================================== */
+
+.card-mystical {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-layered);
+  transition: all var(--transition-base) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-mystical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 217, 255, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base) var(--ease-out);
+  pointer-events: none;
+}
+
+.card-mystical:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-teal);
+  transform: translateY(-4px);
+}
+
+.card-mystical:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   COMPONENT CLASSES - INPUTS
+   ========================================================================== */
+
+.input-mystical {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--glass-bg-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  box-shadow: var(--shadow-inner);
+  transition: all var(--transition-base) var(--ease-out);
+}
+
+.input-mystical::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input-mystical:focus {
+  outline: none;
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-inner), var(--shadow-glow-cyan);
+  background: var(--glass-bg-strong);
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}

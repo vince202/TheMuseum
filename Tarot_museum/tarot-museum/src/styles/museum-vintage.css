@@ -1,0 +1,613 @@
+/**
+ * VINTAGE MUSEUM THEME
+ * A classical, mysterious museum vault aesthetic
+ * Inspired by 19th-century occult libraries and candlelit galleries
+ */
+
+/* ========================================
+   COLOR PALETTE
+   ======================================== */
+:root {
+  /* Deep blacks and charcoals */
+  --museum-black: #0a0a0a;
+  --museum-charcoal: #1a1a1a;
+  --museum-stone: #2a2520;
+
+  /* Warm golds and ambers */
+  --museum-gold: #D3B77C;
+  --museum-amber: #e8dcc7;
+  --museum-parchment: #f5f0e8;
+
+  /* Shadows and effects */
+  --museum-shadow: rgba(0, 0, 0, 0.8);
+  --museum-glow: rgba(211, 183, 124, 0.4);
+  --museum-vignette: rgba(10, 10, 10, 0.6);
+
+  /* Spacing and timing */
+  --museum-transition: cubic-bezier(0.4, 0, 0.2, 1);
+  --museum-ease-slow: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+body {
+  background-color: var(--museum-black);
+  color: var(--museum-amber);
+  font-family: 'Cinzel', 'Georgia', serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Film grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  animation: grain 8s steps(10) infinite;
+}
+
+/* Vignette effect - dark edges, lighter center */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 40%,
+    var(--museum-vignette) 100%
+  );
+}
+
+/* ========================================
+   ANIMATIONS - Keyframes
+   ======================================== */
+
+/* Grain texture movement */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Candle flicker effect - subtle opacity and blur */
+@keyframes candleFlicker {
+  0%, 100% {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+  }
+  10% {
+    opacity: 0.95;
+    filter: blur(0.5px) brightness(0.98);
+  }
+  20% {
+    opacity: 1;
+    filter: blur(0px) brightness(1.02);
+  }
+  30% {
+    opacity: 0.92;
+    filter: blur(0.3px) brightness(0.96);
+  }
+  50% {
+    opacity: 0.98;
+    filter: blur(0.2px) brightness(1.01);
+  }
+  70% {
+    opacity: 0.93;
+    filter: blur(0.4px) brightness(0.97);
+  }
+  85% {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+  }
+}
+
+/* Gentle breathing glow */
+@keyframes breathingGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 10px var(--museum-glow),
+      0 0 20px rgba(211, 183, 124, 0.2),
+      inset 0 0 15px rgba(211, 183, 124, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--museum-glow),
+      0 0 35px rgba(211, 183, 124, 0.3),
+      inset 0 0 25px rgba(211, 183, 124, 0.15);
+  }
+}
+
+/* Gentle floating motion */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Subtle hover float */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Light sweep across surface */
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Floor ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Gentle pulse for accents */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Shimmer effect for text */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--museum-gold);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow:
+    0 0 20px rgba(211, 183, 124, 0.3),
+    0 2px 4px var(--museum-shadow);
+}
+
+.vintage-title {
+  background: linear-gradient(
+    90deg,
+    var(--museum-gold) 0%,
+    var(--museum-amber) 50%,
+    var(--museum-gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+p, span, div {
+  color: var(--museum-parchment);
+  line-height: 1.8;
+}
+
+/* ========================================
+   CARDS & CONTAINERS
+   ======================================== */
+.museum-card {
+  background: linear-gradient(
+    145deg,
+    var(--museum-charcoal) 0%,
+    var(--museum-stone) 100%
+  );
+  border: 1px solid rgba(211, 183, 124, 0.2);
+  border-radius: 4px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s var(--museum-ease-slow);
+
+  /* Vintage layered shadows */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(211, 183, 124, 0.1);
+}
+
+.museum-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(211, 183, 124, 0.3),
+    transparent
+  );
+  transition: left 0.8s var(--museum-ease-slow);
+}
+
+.museum-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(211, 183, 124, 0.4);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    0 16px 32px rgba(0, 0, 0, 0.3),
+    0 0 30px var(--museum-glow),
+    inset 0 1px 0 rgba(211, 183, 124, 0.2);
+}
+
+.museum-card:hover::before {
+  left: 100%;
+}
+
+/* Floating cards */
+.museum-card-floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ========================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ======================================== */
+.museum-button {
+  background: linear-gradient(
+    145deg,
+    var(--museum-stone) 0%,
+    var(--museum-charcoal) 100%
+  );
+  color: var(--museum-gold);
+  border: 1px solid var(--museum-gold);
+  padding: 0.75rem 2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--museum-transition);
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(211, 183, 124, 0.1);
+}
+
+.museum-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(211, 183, 124, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.museum-button:hover {
+  animation: breathingGlow 3.6s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+.museum-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.museum-button:active {
+  transform: translateY(0px);
+}
+
+/* ========================================
+   ARCH & PORTAL EFFECTS
+   ======================================== */
+.museum-arch {
+  position: relative;
+  border: 2px solid var(--museum-gold);
+  border-radius: 50% 50% 0 0;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(42, 37, 32, 0.3) 100%
+  );
+  overflow: hidden;
+}
+
+.museum-arch::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(211, 183, 124, 0.1) 0%,
+    transparent 70%
+  );
+  transform: translateX(-50%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Ripple effect on arch hover */
+.museum-arch:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--museum-gold);
+  transform: translateX(-50%);
+  animation: ripple 2s ease-out forwards;
+}
+
+/* ========================================
+   CANDLE LIGHT ELEMENTS
+   ======================================== */
+.candle-glow {
+  position: relative;
+}
+
+.candle-glow::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 80px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(232, 220, 199, 0.8) 0%,
+    rgba(232, 220, 199, 0.4) 30%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  animation: candleFlicker 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ========================================
+   DECORATIVE ELEMENTS
+   ======================================== */
+.museum-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--museum-gold) 50%,
+    transparent 100%
+  );
+  margin: 2rem 0;
+  position: relative;
+}
+
+.museum-divider::before {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--museum-gold);
+  background: var(--museum-charcoal);
+  padding: 0 1rem;
+  font-size: 0.8rem;
+}
+
+/* Ornamental corners */
+.museum-frame {
+  position: relative;
+  padding: 2rem;
+}
+
+.museum-frame::before,
+.museum-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--museum-gold);
+}
+
+.museum-frame::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.museum-frame::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* ========================================
+   SCROLL EFFECTS
+   ======================================== */
+.museum-scroll {
+  background: var(--museum-stone);
+  border-left: 3px solid var(--museum-gold);
+  border-right: 3px solid var(--museum-gold);
+  padding: 2rem;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  body::before {
+    animation: none;
+    opacity: 0.03;
+  }
+
+  .museum-card-floating {
+    animation: none;
+  }
+
+  .candle-glow::before {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* GPU acceleration for smooth animations */
+.museum-card,
+.museum-button,
+.museum-arch {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize expensive properties */
+.candle-glow::before,
+body::before {
+  will-change: opacity;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.museum-text-gold {
+  color: var(--museum-gold);
+}
+
+.museum-text-amber {
+  color: var(--museum-amber);
+}
+
+.museum-text-parchment {
+  color: var(--museum-parchment);
+}
+
+.museum-bg-black {
+  background-color: var(--museum-black);
+}
+
+.museum-bg-charcoal {
+  background-color: var(--museum-charcoal);
+}
+
+.museum-bg-stone {
+  background-color: var(--museum-stone);
+}
+
+.museum-shadow-deep {
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.museum-shadow-glow {
+  box-shadow:
+    0 0 20px var(--museum-glow),
+    0 0 40px rgba(211, 183, 124, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  .museum-card {
+    padding: 1.5rem;
+  }
+
+  .museum-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  body::before {
+    opacity: 0.03; /* Reduce grain on mobile */
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .museum-card,
+  .museum-button {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
