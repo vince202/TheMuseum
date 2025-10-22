@@ -139,7 +139,7 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true,
+    open: false, // Disabled to prevent xdg-open errors in headless environments
     // Enable HTTP/2 for better performance
     https: false,
     // Compression for dev server
