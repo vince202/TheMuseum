@@ -18,7 +18,6 @@ interface GallicaIframeProps {
 export const GallicaIframe: React.FC<GallicaIframeProps> = ({
   ark,
   initialPage = 1,
-  totalPages,
   fallbackPages = [1, 2, 3],
   className = '',
   title = 'Document Gallica',
