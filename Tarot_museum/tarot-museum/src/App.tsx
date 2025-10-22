@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { MuseumNavigation } from './components/MuseumNavigation';
 import HomePage from './pages/HomePage';
 import ExplorePage from './pages/ExplorePage';
+import VestibulePage from './pages/rooms/VestibulePage';
 import { CardReading } from './components/CardReading';
 import { Timeline } from './components/Timeline';
 import { CardDisplay } from './components/CardDisplay';
@@ -162,6 +163,22 @@ const App: React.FC = () => {
                     Nous maintenons les plus hauts standards d'accessibilité (WCAG 2.1 AA) et de sensibilité culturelle.
                   </p>
                 </div>
+              </motion.div>
+            }
+          />
+
+          {/* Museum Rooms */}
+          <Route
+            path="/vestibule"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <VestibulePage />
               </motion.div>
             }
           />
