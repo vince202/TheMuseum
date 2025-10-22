@@ -34,8 +34,8 @@ export const Vestibule: React.FC = () => {
               width: '100%',
               height: '100%',
               border: 0,
-              pointerEvents: 'none',
-              mixBlendMode: gravure.blendMode || 'multiply'
+              pointerEvents: 'none' as const,
+              mixBlendMode: (gravure.blendMode || 'multiply') as React.CSSProperties['mixBlendMode']
             }}
             loading="lazy"
           />

@@ -6,6 +6,7 @@ interface RoomArchwayProps {
   href: string;
   title: string;
   description: string;
+  icon?: string;
   className?: string;
 }
 
@@ -13,10 +14,11 @@ export const RoomArchway: React.FC<RoomArchwayProps> = ({
   href,
   title,
   description,
+  icon,
   className = '',
 }) => {
   return (
-    <Link href={href} className={`block ${className}`}>
+    <Link to={href} className={`block ${className}`}>
       <motion.div
         className="relative group cursor-pointer overflow-hidden rounded-lg"
         whileHover={{ scale: 1.02 }}
