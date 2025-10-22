@@ -100,7 +100,7 @@ export const LivresConsultables: React.FC<LivresConsultablesProps> = ({ livres }
                     </div>
                   )}
                   <img
-                    src={livre.coverImage}
+                    src={livre.coverUrl}
                     alt={`Couverture de ${livre.titre}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
@@ -117,7 +117,7 @@ export const LivresConsultables: React.FC<LivresConsultablesProps> = ({ livres }
                   <div className="absolute inset-0 bg-gradient-to-t from-museumBlack/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                     <span className="text-museumGold text-sm font-serif tracking-wider flex items-center gap-2">
                       <BookOpen size={16} />
-                      Feuilleter →
+                      {livre.hoverText || 'Feuilleter →'}
                     </span>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export const LivresConsultables: React.FC<LivresConsultablesProps> = ({ livres }
                   {livre.date}
                 </p>
                 <p className="text-museumParchment/60 text-sm line-clamp-3 leading-relaxed">
-                  {livre.description}
+                  {livre.hoverText}
                 </p>
               </div>
             </div>

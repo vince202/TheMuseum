@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Citation } from '../../data/gallicaContent';
 
 interface CitationsMystiquesProps {
-  citations: string[];
+  citations: Citation[];
   interval?: number; // milliseconds
 }
 
@@ -23,13 +24,11 @@ export const CitationsMystiques: React.FC<CitationsMystiquesProps> = ({
   const positions = [
     { top: '15%', left: '10%' },
     { top: '20%', right: '15%' },
-    { bottom: '25%', left: '12%' },
-    { bottom: '20%', right: '10%' },
-    { top: '40%', left: '8%' },
-    { top: '45%', right: '12%' }
+    { bottom: '25%', left: '12%' }
   ];
 
   const position = positions[currentIndex % positions.length];
+  const citation = citations[currentIndex];
 
   return (
     <div
@@ -37,7 +36,12 @@ export const CitationsMystiques: React.FC<CitationsMystiquesProps> = ({
       style={position}
       key={currentIndex}
     >
-      "{citations[currentIndex]}"
+      <span className="citation-text">"{citation.text}"</span>
+      {citation.author && (
+        <span className="citation-author block mt-2 text-museumGold/60 text-sm">
+          — {citation.author}{citation.year && `, ${citation.year}`}
+        </span>
+      )}
     </div>
   );
 };
