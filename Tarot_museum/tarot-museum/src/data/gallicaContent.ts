@@ -12,6 +12,8 @@ export interface GallicaLivre {
   iframeUrl: string;
   coverImage: string;
   description: string;
+  totalPages?: number; // Nombre de pages disponibles pour fallback/navigation
+  fallbackPages?: number[]; // Pages de secours si la première ne charge pas
 }
 
 export interface GallicaGravure {
@@ -30,6 +32,7 @@ export interface GallicaGravure {
   };
   opacity: number;
   blendMode?: string;
+  fallbackPages?: string[]; // URLs de fallback si l'iframe ne charge pas
 }
 
 export interface Fondateur {
@@ -51,7 +54,9 @@ export const vestibuleContent = {
       ark: 'bpt6k5438581s',
       iframeUrl: 'https://gallica.bnf.fr/ark:/12148/bpt6k5438581s/f1.item',
       coverImage: 'https://gallica.bnf.fr/iiif/ark:/12148/bpt6k5438581s/f1/full/400,/0/default.jpg',
-      description: 'Le premier traité de cartomancie moderne. Etteilla révolutionne l\'art divinatoire en créant un système complet d\'interprétation des cartes.'
+      description: 'Le premier traité de cartomancie moderne. Etteilla révolutionne l\'art divinatoire en créant un système complet d\'interprétation des cartes.',
+      totalPages: 8,
+      fallbackPages: [1, 2, 3, 4, 5]
     },
     {
       id: 'gebelin-1781',
@@ -61,7 +66,9 @@ export const vestibuleContent = {
       ark: 'bpt6k411333v',
       iframeUrl: 'https://gallica.bnf.fr/ark:/12148/bpt6k411333v/f1.item',
       coverImage: 'https://gallica.bnf.fr/iiif/ark:/12148/bpt6k411333v/f1/full/400,/0/default.jpg',
-      description: 'L\'ouvrage fondateur qui établit le mythe égyptien du tarot. Court de Gébelin y voit les vestiges du Livre de Thot.'
+      description: 'L\'ouvrage fondateur qui établit le mythe égyptien du tarot. Court de Gébelin y voit les vestiges du Livre de Thot.',
+      totalPages: 8,
+      fallbackPages: [1, 2, 3, 4, 5]
     },
     {
       id: 'papus-1889',
@@ -71,7 +78,9 @@ export const vestibuleContent = {
       ark: 'bpt6k5438565g',
       iframeUrl: 'https://gallica.bnf.fr/ark:/12148/bpt6k5438565g/f1.item',
       coverImage: 'https://gallica.bnf.fr/iiif/ark:/12148/bpt6k5438565g/f1/full/400,/0/default.jpg',
-      description: 'Synthèse ésotérique majeure reliant le tarot à la Kabbale, l\'astrologie et l\'alchimie. Ouvrage de référence de l\'occultisme français.'
+      description: 'Synthèse ésotérique majeure reliant le tarot à la Kabbale, l\'astrologie et l\'alchimie. Ouvrage de référence de l\'occultisme français.',
+      totalPages: 8,
+      fallbackPages: [1, 2, 3, 4, 5]
     }
   ] as GallicaLivre[],
 
@@ -83,7 +92,11 @@ export const vestibuleContent = {
       position: { top: '10%', right: '5%' },
       size: { width: '250px', height: '350px' },
       opacity: 0.12,
-      blendMode: 'multiply'
+      blendMode: 'multiply',
+      fallbackPages: [
+        'https://gallica.bnf.fr/ark:/12148/btv1b8626554h/f2.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b8626554h/f3.item.mini'
+      ]
     },
     {
       id: 'symboles-egyptiens',
@@ -92,7 +105,11 @@ export const vestibuleContent = {
       position: { bottom: '15%', left: '8%' },
       size: { width: '280px', height: '200px' },
       opacity: 0.08,
-      blendMode: 'screen'
+      blendMode: 'screen',
+      fallbackPages: [
+        'https://gallica.bnf.fr/ark:/12148/btv1b105458061/f2.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b105458061/f3.item.mini'
+      ]
     },
     {
       id: 'cartes-anciennes',
@@ -101,7 +118,16 @@ export const vestibuleContent = {
       position: { top: '50%', left: '5%' },
       size: { width: '200px', height: '300px' },
       opacity: 0.10,
-      blendMode: 'multiply'
+      blendMode: 'multiply',
+      fallbackPages: [
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f2.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f3.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f4.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f5.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f6.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f7.item.mini',
+        'https://gallica.bnf.fr/ark:/12148/btv1b10545802x/f8.item.mini'
+      ]
     }
   ] as GallicaGravure[],
 
