@@ -6,10 +6,10 @@
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, Sparkles, shaderMaterial } from '@react-three/drei';
-import { motion, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import * as THREE from 'three';
 import { extend } from '@react-three/fiber';
-import { TarotCard } from '../../data/tarotDatabase';
+import { TarotCard } from '@/types/tarot';
 import { RotateCcw, ZoomIn, ZoomOut, Move3D, Maximize2 } from 'lucide-react';
 
 interface Card3DViewerProps {
@@ -379,7 +379,7 @@ const Card3DViewer: React.FC<Card3DViewerProps> = ({
       >
         <h3 className="text-white font-bold text-lg mb-1">{card.name}</h3>
         <p className="text-white/70 text-sm capitalize">
-          {card.arcana === 'major' ? 'Major Arcana' : `${card.suit} • ${card.element || 'Arcana'}`}
+          {card.arcana === 'major' ? 'Major Arcana' : `${card.suit} Arcana`}
         </p>
       </motion.div>
     </div>

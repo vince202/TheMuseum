@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MuseumNavigation } from './components/MuseumNavigation';
@@ -8,7 +8,7 @@ import VestibulePage from './pages/rooms/VestibulePage';
 import { CardReading } from './components/CardReading';
 import { Timeline } from './components/Timeline';
 import { CardDisplay } from './components/CardDisplay';
-import { TarotCard, completeTarotDeck, getCardById } from './data/tarotDatabase';
+import { getCardById } from './data/tarotDatabase';
 // REMOVED: Bright modern effects (AuroraBackground, ParticleField)
 // import { AuroraBackground, ParticleField } from './components/Effects';
 
