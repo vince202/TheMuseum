@@ -5,6 +5,7 @@ import { CitationsMystiques } from './CitationsMystiques';
 import { LivresConsultables } from './LivresConsultables';
 import { GaleriePortraits } from './GaleriePortraits';
 import { PorteSortie } from './PorteSortie';
+import { EasterEgg } from './EasterEgg';
 import './Vestibule.css';
 
 export const Vestibule: React.FC = () => {
@@ -112,6 +113,9 @@ export const Vestibule: React.FC = () => {
           </p>
         </div>
       </footer>
+
+      {/* Easter Egg Secret */}
+      <EasterEgg easterEgg={vestibuleContent.easterEgg} />
     </div>
   );
 };
