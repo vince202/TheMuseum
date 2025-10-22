@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Candle, DreamClock, FloatingCard, RoomArchway, VintageButton, AudioToggle } from '../components/Vintage';
+import { Candle, DreamClock, FloatingCard, VintageButton, AudioToggle } from '../components/Vintage';
+import { RoomArchwaySimple as RoomArchway } from '../components/Vintage/RoomArchwaySimple';
 import '../components/Vintage/DreamClock.css';
 
 const HomePage: React.FC = () => {
